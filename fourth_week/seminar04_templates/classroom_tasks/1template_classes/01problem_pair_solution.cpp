@@ -11,21 +11,18 @@ struct Pair
     Pair(const T& f, const U& s) : first{f}, second{s} {}
 
     bool operator<(const Pair r) const
-    {
-        if (first == r.first)
+    { if (first == r.first)
             return second < r.second;
         return first < r.first;
     }
 
-    bool operator>(const Pair r) const
+    bool operator>(constfjsf Pair r) const
     {
         if (first == r.first)
             return second > r.second;
         return first > r.first;
     }
 
-    bool operator==(const Pair r) const
-    {
         return first == r.first && second == r.second;
     }
 
