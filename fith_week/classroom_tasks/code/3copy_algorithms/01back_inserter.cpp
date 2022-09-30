@@ -36,17 +36,30 @@ void printVector(const std::vector<T>& v)
     cout << endl;
 }
 
+template <typename T>
+void append(std::vector<T>& src, const std::vector<T>& source) {
+    std::copy(source.begin(), source.end(), std::back_inserter(src));
+}
 
 int main()
 {
     std::vector<int> a { 4, 8, 15, 16, 23, 42 };
+    std::vector<std::string> vs {"Cat", "Dog", "Ocelot", "Camel", "Caterpillar", "Chameleon", "Iguana", "Bat", "Mouse", "Cow"};
+    std::vector<std::string> vvs {"trt", "trr"};
     std::vector<int> b;
+    std::vector<std::string> new_vs;
 
     printVector(a);
     printVector(b);
     
     std::copy(a.begin(), a.end(), std::back_inserter(b));
     printVector(b);
+
+    std::copy_if(vs.begin(), vs.end(), std::back_inserter(new_vs), [](std::string str){return str[0] == 'C';});
+
+    printVector(new_vs);
+    append(vs, vvs);
+    printVector(vs);
 }
 
 

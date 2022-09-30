@@ -28,6 +28,7 @@ void printVector(const std::vector<T>& v)
 int main()
 {
     std::vector<int> v1 {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
+    std::vector<std::string> vs {"Cat", "Dog", "Ocelot", "Camel", "Caterpillar", "Chameleon", "Iguana", "Bat", "Mouse", "Cow"};
     printVector(v1);
     
     std::vector<int> v2(v1.size());
@@ -39,6 +40,10 @@ int main()
     std::vector<int> v3(numberOfEven);
     std::copy_if(v1.begin(), v1.end(), v3.begin(), [](int a) {return a % 2 == 0;});
     printVector(v3);
+    std::vector<std::string> new_vs(vs.size());
+    std::copy_if(vs.begin(), vs.end(), new_vs.begin(), [](std::string str){return str[0] == 'C';});
+    printVector(new_vs);
+
 }
 
 
