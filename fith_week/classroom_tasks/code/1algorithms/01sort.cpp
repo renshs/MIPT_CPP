@@ -29,11 +29,20 @@ void printVector(const std::vector<T>& v)
 
 int main()
 {
-    std::vector<int> v {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
+    int n;
+    std::cin >> n;
+    std::vector<int> container = {};
 
-    printVector(v);
-    std::reverse(v.begin(), v.end());
-    printVector(v);
+    for (size_t i = 0; i < n; i ++) {
+        int temp;
+        std::cin >> temp;
+        container.push_back(temp);
+    }
+
+    std::sort(container.begin(), container.end());
+
+    printVector(container);
+
 }
 
 

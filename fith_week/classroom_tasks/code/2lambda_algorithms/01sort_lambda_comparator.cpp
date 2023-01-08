@@ -31,7 +31,7 @@ int main()
     std::vector<int> v {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
 
     printVector(v);
-    std::sort(v.begin(), v.end(), [](int a, int b) {return a > b;});
+    std::sort(v.begin(), v.end(), [](int a, int b) {return a % 10 < b % 10;});
     printVector(v);
 }
 

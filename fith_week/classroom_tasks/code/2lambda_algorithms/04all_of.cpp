@@ -22,11 +22,16 @@ void printVector(const std::vector<T>& v)
 }
 
 
+bool containChar(const std::vector<std::string>& v, const char chr) {
+    return std::any_of(v.begin(), v.end(), [chr](std::string str){return std::count(str.begin(), str.end(), chr) > 0;});
+}
+
+
 int main()
 {
     std::vector<int> vi {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
     std::vector<std::string> vs {"Cat", "Dog", "Ocelot", "Camel", "Caterpillar", "Chameleon", "Iguana", "Bat", "Mouse", "Cow"};
-
+    cout << containChar(vs, 'b') << endl;
 
     printVector(vi);
     printVector(vs);

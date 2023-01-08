@@ -24,6 +24,8 @@ int main()
 {
     std::vector<int> vi {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
     std::vector<std::string> vs {"Cat", "Dog", "Ocelot", "Camel", "Caterpillar", "Chameleon", "Iguana", "Bat", "Mouse", "Cow"};
+    std::partition(vi.begin(), vi.end(), [](int n){return n % 2 == 0;});
+    std::partition(vs.begin(), vs.end(), [](std::string str){return str[0] == 'C';});
 
 
     printVector(vi);

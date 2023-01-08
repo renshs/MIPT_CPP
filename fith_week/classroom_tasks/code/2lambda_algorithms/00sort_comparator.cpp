@@ -20,7 +20,7 @@ void printVector(const std::vector<T>& v)
 
 bool cmp(int a, int b)
 {
-    return a > b;
+    return a % 10 < b % 10;
 }
 
 int main()

@@ -61,7 +61,17 @@ int main()
     std::set<int> s {10, 20, 30, 40, 50};
     std::unordered_set u {10, 20, 30, 40, 50};
 
+    for (std::list<int>::iterator it = l.begin(); it != l.end(); it++) {
+        cout << *it << ' ';
+    }
 
+    for (std::set<int>::iterator it = s.begin(); it != s.end(); it++) {
+        cout << *it << ' ';
+    }
+
+    for (std::unordered_set<int>::iterator it = u.begin(); it != u.end(); it++) {
+        cout << *it << ' ';
+    }
 
 }
 

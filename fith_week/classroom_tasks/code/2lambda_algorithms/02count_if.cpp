@@ -12,13 +12,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 using std::cout, std::endl;
 
 int main()
 {
-    std::vector<int> v {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
+    std::vector<std::string> v {"Cat", "Dog", "Ocelot", "Camel", "Caterpillar", "Lion", "Iguana", "Bat", "Mouse", "Oak"};
 
-    cout << std::count_if(v.begin(), v.end(), [](int el){return el % 2 == 0;}) << endl;
+
+    cout << std::count_if(v.begin(), v.end(), [](std::string el){return el[0] == 'C';}) << endl;
 }
 
 

@@ -24,11 +24,20 @@ void printVector(const std::vector<T>& v)
     }
     cout << endl;
 }
+template <typename T>
+bool contains(std::vector<T>& v, T value) {
+    typename std::vector<T>::iterator it = std::find(v.begin(), v.end(), value);
+    if (it != v.end()) {
+        return 1; 
+    }
+    return 0;
+}
 
 
 int main()
 {
     std::vector<int> v {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
+    cout << contains(v, 81) << endl;
 
 }
 

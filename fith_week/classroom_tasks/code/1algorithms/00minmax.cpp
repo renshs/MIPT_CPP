@@ -16,7 +16,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using std::cout, std::endl;
+using std::cout, std::endl, std::cin;
 
 
 int main()
@@ -24,6 +24,33 @@ int main()
     std::vector<int> v {81, 82, 78, 36, 39, 96, 11, 58, 15, 48};
 
     cout << *std::min_element(v.begin(), v.end()) << endl;
+
+    int n = 0;
+    cin >> n;
+
+    std::vector<int> cont = {};
+
+    for (int i = 0; i < n; i++) {
+        int temp;
+        cin >> temp;
+        cont.push_back(temp);
+    }
+
+    cout << *std::min_element(cont.begin(), cont.end()) << endl;
+
+
+    int m;
+    cin >> m;
+
+    std::vector<int> tem2 = {};
+
+    for (int i = 0; i < m; i++) {
+        int temp;
+        cin >> temp;
+        tem2.push_back(temp);
+    }
+
+    cout << *std::min_element(tem2.begin(), tem2.begin() + m / 2) << ' ' <<  *std::min_element(tem2.begin() + m / 2, tem2.end()) << endl;
 }
 
 
